@@ -16,3 +16,10 @@ num = random.randint(1, 999999999999999999999999999999)
 
 # Enviando o numero gerado para o servidor
 sock.sendall(str(num).encode())
+
+# Recebendo a resposta do servidor
+data = sock.recv(1024)
+Resp = data.decode() + "FIM"
+
+# Imprimindo a resposta do servidor
+print(Resp)
