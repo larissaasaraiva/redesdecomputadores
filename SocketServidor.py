@@ -29,10 +29,10 @@ while True:
 #VERIFICANDO TAMANHO DO NÚMERO
 if len(num) >10:
     
-    #GERANDO UMA STRING COM TAMANHO IGUAL AO NUMERO E MANDANDO DE VOLTA
+#GERANDO UMA STRING COM TAMANHO IGUAL AO NUMERO E MANDANDO DE VOLTA
     string = "a" * len(num)
     conn.send(string.encode())
-     
+
 #CASO NUMERO FOR MENOR DO QUE 10, VERIFICANDO SE ELE É PAR OU IMPAR        
 else:
     if int(num) % 2 == 0:
@@ -41,6 +41,7 @@ else:
         conn.send("ÍMPAR".encode())
         
 
-        
+#FECHANDOO A CONEXÃO
+conn.close()      
 
 
