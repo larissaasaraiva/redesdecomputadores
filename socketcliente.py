@@ -1,4 +1,6 @@
 import socket
+import random
+import time
 
 # Setando Host e Porta
 Host = 'localhost'
@@ -34,3 +36,8 @@ def Client(Host, Port):
     # Fechando a conexão
     sock.close()
     print('Conexão encerrada com o servidor {} na porta {}'.format(*server_address))
+
+# Criando um loop para o cliente com sleep de 10 segundos
+while True:
+    Client(Host, Port)
+    time.sleep(10)
