@@ -26,3 +26,6 @@ print(Resp)
 
 # Devolvendo a resposta do servidor
 sock.sendall(Resp.encode())
+
+# Fechando a conexão
+sock.close()
