@@ -12,9 +12,27 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((HOST, PORT))
 s.listen
 
+
 #RECEBENDO DADOS DO CLIENTE, ACEITANDO A CONEXÃO
 print('Aguardando conexão')
 conn, ender = s.accept()
 
 #INFORMANDO O SUCESSO DA CONEXÃO
 print('Conectado em', ender)
+
+#LAÇO PARA REPETIÇÃO
+while True:
+    
+#RECEBENDO NÚMERO DO CLIENTE
+    data = conn.recv(1024).decode()
+    
+#VERIFICANDO TAMANHO DO NÚMERO
+if len(num) >10:
+    
+    #GERANDO UMA STRING COM TAMANHO IGUAL AO NUMERO E MANDANDO DE VOLTA
+    string = "a" * len(num)
+    conn.send(string.encode())
+        
+        
+
+
