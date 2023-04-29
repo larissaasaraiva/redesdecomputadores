@@ -23,3 +23,6 @@ Resp = data.decode() + "FIM"
 
 # Imprimindo a resposta do servidor
 print(Resp)
+
+# Devolvendo a resposta do servidor
+sock.sendall(Resp.encode())
