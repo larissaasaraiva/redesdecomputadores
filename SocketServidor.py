@@ -15,3 +15,6 @@ s.listen
 #RECEBENDO DADOS DO CLIENTE, ACEITANDO A CONEXÃO
 print('Aguardando conexão')
 conn, ender = s.accept()
+
+#INFORMANDO O SUCESSO DA CONEXÃO
+print('Conectado em', ender)
