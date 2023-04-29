@@ -1,4 +1,5 @@
 import socket
+from typing import Self
 
 #nome da maquina e numero da porta
 
@@ -8,22 +9,18 @@ PORT = 10000
 #CRIANDO INVOCANDO O MÉTODO SOCKET
 
 #AF INET(IPV4), STREAM POIS É TCP
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.bind((HOST, PORT))
-s.listen
-
-
-#RECEBENDO DADOS DO CLIENTE, ACEITANDO A CONEXÃO
-print('Aguardando conexão')
-conn, ender = s.accept()
-
-#INFORMANDO O SUCESSO DA CONEXÃO
-print('Conectado em', ender)
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server_socket.bind((HOST, PORT))
+server_socket.listen
 
 #LAÇO PARA REPETIÇÃO
 while True:
     
-#RECEBENDO NÚMERO DO CLIENTE
+    #RECEBENDO DADOS DO CLIENTE, ACEITANDO A CONEXÃO
+    print('Aguardando conexão')
+    conn, addr = Self.accept()
+
+    #RECEBENDO NÚMERO DO CLIENTE
     data = conn.recv(1024).decode()
     
 #VERIFICANDO TAMANHO DO NÚMERO
