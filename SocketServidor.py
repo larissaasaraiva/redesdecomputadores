@@ -32,7 +32,15 @@ if len(num) >10:
     #GERANDO UMA STRING COM TAMANHO IGUAL AO NUMERO E MANDANDO DE VOLTA
     string = "a" * len(num)
     conn.send(string.encode())
+     
+#CASO NUMERO FOR MENOR DO QUE 10, VERIFICANDO SE ELE É PAR OU IMPAR        
+else:
+    if int(num) % 2 == 0:
+        conn.send("PAR".encode())
+    else:
+        conn.send("ÍMPAR".encode())
         
+
         
 
 
