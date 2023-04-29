@@ -1,8 +1,13 @@
 import socket
 
+
+#SETEANDO PORTA E HOST
+HOST ='localhost'
+PORT = 10000
+
 #AF INET(IPV4), STREAM POIS É TCP
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server_socket.bind(('localhost', 10000))
+server_socket.bind((HOST, PORT))
 server_socket.listen()
 
 #LAÇO PARA REPETIÇÃO
