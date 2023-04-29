@@ -11,3 +11,7 @@ PORT = 10000
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((HOST, PORT))
 s.listen
+
+#RECEBENDO DADOS DO CLIENTE, ACEITANDO A CONEXÃO
+print('Aguardando conexão')
+conn, ender = s.accept()
